@@ -9,3 +9,11 @@ Important files:
 * model.h5 containing a trained convolution neural network 
 * writeup_report.md or a report summarizing the results   
 ---
+## Model and training
+
+
+---
+## Generating Data
+
+---
+##Training the network
