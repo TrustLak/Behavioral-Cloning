@@ -30,6 +30,7 @@ This model is implemented using keras with tensorflow backend. This is included 
 ---
 ## Generating Data
 Generating proper data is the core of this project. In this section I provide my approach to collect training examples. I also highlight some mistakes that I made.
+![img](mix.jpg "Center, left and right images")
 
 Data collectoin procedure:
 1. Use the original data provided with the project. Looking at the values of the steering angles of this data shows that keyboard controls are used (lots of zeros).
@@ -43,6 +44,7 @@ Data collectoin procedure:
 Mistakes to avoid:  
 1. While trying to collect recovery data, i.e. training exmaples of your car recovering from a bad turn, start recording while recovering. In other words, do not record the part where you intentionally drive the car to the boundaries.
 2. Avoid corrolating the training data with the tests that you make, which I think is the greatest challenge of this project. For example, assume you trained the model on a certain data set. While testing your model, you see that the car tends to go right near the bridge. To correct this error, a faulty approach is to go to the same place and record multiple prefectly executed trials. By doing so, the car will probably pass this checkpoint, but only because it memorized it. In other words, it is like you are training on the test set. Ofcourse, the loss will go down, but the model will not generalize. To avoid this pitfall, try to drive the car manually slightly after the point where the car fails, and let it continue autonomously. This way will recognize most of the mistakes the car is making. Then randomly select some places around the map to add some recovery data that you think was missing.
+3. Avoid collecting very large amounts of data. The model will easily memorize the track. I presonally challenged myself to collect the minimum ammount of data. Ultimately, we want to minimize the generalization error, not the training error.
 ---
 ## Training the model
 Important notes for training:
