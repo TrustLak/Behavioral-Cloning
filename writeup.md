@@ -25,11 +25,16 @@ The core layers are:
 11. A fully connected layer with output dimension=10x1
 12. A fully connected layer with output dimension=1x1 (steering angle float)  
   
-This model is implemented using keras with tensorflow backend. This is included in model.py.
+This model is implemented using keras with tensorflow backend. This is included in model.py. The resulting model has around 250 thousand parameters.
 
 ---
 ## Generating Data
-Geneerating proper data is the core of this project. 
+Generating proper data is the core of this project. In this section I provide my approach to collect the minimum ammount of data to dr
+
+
+Mistakes to avoid:
+1. While trying to collect recovery data, i.e. training exmaples of your car recovering from a bad turn, start recording while recovering. In other words, do not record the part where you intentionally drive the car to the boundaries.
+2. Avoid corrolating the training data with the tests that you make, which I think is the greatest challenge of this project. For example, assume you trained the model on a certain data set. While testing your model, you see that the car tends to go right near the bridge. To correct this error, a faulty approach is to go to the same place and record multiple prefectly executed trials. By doing so, the car will probably pass this checkpoint, but only because it memorized it. In other words, it is like you are training on the test set. Ofcourse, the loss will go down, but the model will not generalize. To avoid this pitfall, try to drive the car manually slightly after the point where the car fails, and let it continue autonomously. This way will recognize most of the mistakes the car is making. Then randomly select some places around the map to add some recovery data that you think was missing.
 
 ---
 ## Training the model
@@ -40,5 +45,5 @@ Important notes for training netwrok:
 4. The optimizer minimizes the mean square error of the output
 5. We train for 4 epochs. Anything beyond 4 epochs still decreases the training error, but the validation error either platoes or increases. Hence we limit to 4 epochs to avoid overfitting.
 6. The final size of augmented data is about 22 GB. For some machines, this data cannot be loaded directly to memory. Alternatively, generators should be used to load data in smaller batches. 
-7. It takes around 7 minutes to train this model with around 78,000 training examples. Hardware used: NVIDIA GTX 1080 ti, intel corei7 7700K, 32 GB hyperX RAM
+7. It takes around 7 minutes to train this model with 88686 training examples. Hardware used: NVIDIA GTX 1080 ti, intel core i7 7700K, 32 GB hyperX RAM
 
