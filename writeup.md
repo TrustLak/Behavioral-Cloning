@@ -23,8 +23,9 @@ The core layers are:
 9. A fully connected layer with output dimension=100x1
 10. A fully connected layer with output dimension=50x1
 11. A fully connected layer with output dimension=10x1
-12. A fully connected layer with output dimension=1x1 (steering angle float)
-
+12. A fully connected layer with output dimension=1x1 (steering angle float)  
+  
+This model is implemented using keras with tensorflow backend. This is included in model.py.
 
 ---
 ## Generating Data
@@ -32,5 +33,12 @@ Geneerating proper data is the core of this project.
 
 ---
 ## Training the model
-
+Important notes for training netwrok:
+1. 80% of the data is used for training, 20% for validation
+2. The data is shuffled
+3. adam optimizer is used
+4. The optimizer minimizes the mean square error of the output
+5. We train for 4 epochs. Anything beyond 4 epochs still decreases the training error, but the validation error either platoes or increases. Hence we limit to 4 epochs to avoid overfitting.
+6. The final size of augmented data is about 22 GB. For some machines, this data cannot be loaded directly to memory. Alternatively, generators should be used to load data in smaller batches. 
+7. It takes around 7 minutes to train this model with around 78,000 training examples. Hardware used: NVIDIA GTX 1080 ti, intel corei7 7700K, 32 GB hyperX RAM
 
