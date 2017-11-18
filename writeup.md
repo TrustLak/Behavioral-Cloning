@@ -1,5 +1,5 @@
 # Behavioral-Cloning
-An implementation of "[End-to-end learning for self-driving cars](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)" paper by NVIDIA team. This project is a part of Udacity's self-driving car program.
+An implementation of "[End-to-end learning for self-driving cars](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)" paper. This project is a part of Udacity's self-driving car program.
 ---
 ## Files
 Important files:
@@ -54,6 +54,6 @@ Important notes for training:
 4. The optimizer minimizes the mean square error of the output
 5. We train for 4 epochs. Anything beyond 4 epochs still decreases the training error, but the validation error either platoes or increases. Hence we limit to 4 epochs to avoid overfitting.
 6. The final size of augmented data is about 22 GB. For some machines, this data cannot be loaded directly to memory. Alternatively, generators should be used to load data in smaller batches. 
-7. It takes around 7 minutes to train this model with 88686 training examples. Hardware used: NVIDIA GTX 1080 ti, intel core i7 7700K, 32 GB HyperX RAM
+7. It takes around 7 minutes to train this model with 88686 training examples. Hardware used: NVIDIA GTX 1080 ti, Intel core i7 7700K, 32 GB RAM
 
 
