@@ -8,7 +8,7 @@ The goals / steps of this project are the following:
 * Summarize the results with a written report
 
 ### Dependencies
-This lab requires:
+This project requires:
 
 * [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
 
@@ -17,7 +17,7 @@ The lab enviroment can be created with CarND Term1 Starter Kit. Click [here](htt
 The following resources can be found in this github repository:
 * drive.py
 * video.py
-* writeup_template.md
+* writeup.md
 
 The simulator can be downloaded from the classroom. In the classroom, we have also provided sample data that you can optionally use to help train your model.
 
@@ -82,9 +82,5 @@ python video.py run1 --fps 48
 
 Will run the video at 48 FPS. The default FPS is 60.
 
-#### Why create a video
-
-1. It's been noted the simulator might perform differently based on the hardware. So if your model drives succesfully on your machine it might not on another machine (your reviewer). Saving a video is a solid backup in case this happens.
-2. You could slightly alter the code in `drive.py` and/or `video.py` to create a video of what your model sees after the image is processed (may be helpful for debugging).
 
 
