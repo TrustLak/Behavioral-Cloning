@@ -1,5 +1,5 @@
 # Behavioral-Cloning
-An implementation of "End-to-end learning for self-driving cars" paper by NVIDIA team. This project is a part of Udacity's self-driving car program.
+An implementation of "End-to-end learning for self-driving cars" paper by NVIDIA team. This project is a part of Udacity's self-driving car program. Check writeup.md for in depth details.
 ---
 The goals / steps of this project are the following:
 * Use the simulator to collect data of good driving behavior 
