@@ -1,5 +1,5 @@
 # Behavioral-Cloning ([demo](https://youtu.be/-gZGYOtfjZ4))
-An implementation of "[End-to-end learning for self-driving cars](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)" paper. This project is a part of Udacity's self-driving car program.
+An implementation of "[End-to-end learning for self-driving cars](http://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf)" paper.
 ---
 ## Files
 Important files:
